@@ -1,5 +1,5 @@
 # A formatted string is a template in wich words or spaces that will remain constant are combined with
-# placeholders for variables that will be inserteed into the string.
+# placeholders for variables that will be inserted into the string.
 
 aName = "André"
 age = 24
