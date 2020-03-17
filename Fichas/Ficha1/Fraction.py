@@ -12,6 +12,8 @@ def gcd(m, n):
 class Fraction:
 
     # Construtor
+    # Caso seja um atributo privado basta meter: self.__den = bottom, p. ex.
+    # e alterar no resto da classe!
     def __init__(self, top, bottom):
         # Verifica se o numerador e denominador são do tipo int. Se não forem, levanta o erro ValueError()
         if not (type(top) is int and type(bottom) is int):
