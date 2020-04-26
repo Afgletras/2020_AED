@@ -14,10 +14,12 @@ class Fraction:
     # Construtor
     # Caso seja um atributo privado basta meter: self.__den = bottom, p. ex.
     # e alterar no resto da classe!
+
     def __init__(self, top, bottom):
+
         # Verifica se o numerador e denominador são do tipo int. Se não forem, levanta o erro ValueError()
         if not (type(top) is int and type(bottom) is int):
-            raise ValueError()
+            raise ValueError("Tipo de dados não aceite!")
         common = gcd(top, bottom)
         top = top // common
         bottom = bottom // common
@@ -94,8 +96,8 @@ class Fraction:
 
     # Realiza a adição e atribui o valor final à fração
     def __iadd__(self, other):
-        fraction = self + other
-        return fraction
+        self.fraction = self + other
+        return self.fraction
 
     # Realiza a adição, no entanto, caso alguma das frações seja do formato int, levanta um erro
     def __radd__(self, other):
@@ -106,7 +108,7 @@ class Fraction:
 
     # Retorna algo que possa ser lido também pela máquina
     def __repr__(self):
-        return 'Numerator: ' + str(self.num) + '\nDenominator: ' + str(self.den)
+        return 'Numerator: ' + str(self.num) + ' Denominator: ' + str(self.den)
 
 
 if __name__ == '__main__':
@@ -131,15 +133,34 @@ if __name__ == '__main__':
     print("f1 <= f2? ", f1 <= f2)
     print("f1 != f2? ", f1 != f2)
 
-    print("f1 numerator", f1.getNum())
-    print("f1 denominator", f1.getDen())
-    print("f1 Num Real", f1.getReal())
+    print("f1 numerator: ", f1.getNum())
+    print("f1 denominator: ", f1.getDen())
+    print("f1 Num Real: ", f1.getReal())
 
-    f3 = Fraction(3,6)
+    f3 = Fraction(3, 6)
     print("f3 = ", f3)
 
     print("f2 - f1 =", f2 - f1)
 
     print("f1 * f2 =", f1 * f2)
     print("f1 / f2 =", f1 / f2)
+
+    try:
+        f4 = Fraction(2.3, 6.1)
+        print(f4)
+        f5 = Fraction("a", "b")
+        print(f5)
+
+    except ValueError:
+        print("Tipo de dados nao aceite.")
+
+    # print("__repr__(f1): ", f1.__repr__())
+    # print("__repr__(f2): ", f2.__repr__())
+    #
+    # print("__iadd__ :", f1.__iadd__(f2))
+    #
+    # print("f1: ", f1)
+    # print("f2: ", f2)
+
+    #print("__radd__: ", f1.__radd__(f2))
 
