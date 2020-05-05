@@ -1,20 +1,28 @@
-import random
+def findmin_n(lista):
+    min_n = lista[0]
+    for i in lista:
+        if i < min_n:
+            min_n = i
+    return min_n
 
-# O(n^2)
-lista = [2, 5, 6, 9, 0, 2, 4, 3, 1, 9]
-min = lista[0]
-for i in range(len(lista)):
-    if lista[i] < min:
-        min = lista[i]
+def findmin_n2(alist):
+    for i in alist:
+        i_is_min = True
+        for j in alist:
+            if j < i:
+                i_is_min = False
+            j = j + 1
+        if i_is_min:
+            return i
 
-print("O(n^2) - O número mais pequeno da lista ", lista, "é ", min)
+    return min
 
 
-# O(n)
-lista2 = []
-for x in range(10):
-   lista2.append(random.randint(0,9))
+def main():
+    my_list = [20, 40, 10, 30, 25, 50, 85, 15]
+    print("O(n):", findmin_n(my_list))
+    print("O(n^2):", findmin_n2(my_list))
 
-list.sort(lista2)
-print("O(n) - O número mais pequeno da lista ", lista2, "é ", lista2[0])
 
+if __name__ == '__main__':
+    main()
