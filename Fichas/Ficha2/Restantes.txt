@@ -21,7 +21,7 @@ a) Operação de comparação: if A[i] > maxval
 
 b) T(n) = (n-1)*(n-1) = n^2 - 2n + 1  -->  O(n^2)
 
-c) n^2
+c) n^2 - quadrática
 
 
 4.
