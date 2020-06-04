@@ -146,7 +146,7 @@ if __name__ == '__main__':
     print("f1 / f2 =", f1 / f2)
 
     try:
-        f4 = Fraction(2.3, 6.1)
+        f4 = Fraction(2.4, 6.1)
         print(f4)
         f5 = Fraction("a", "b")
         print(f5)
