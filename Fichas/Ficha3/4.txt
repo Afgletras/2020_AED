@@ -1,0 +1,14 @@
+Uma vez que o algoritmo apenas chama a função movedisks duas vezes, retirando uma unidade a n em cada vez, T(n) fica:
+
+T(n) = 2(T(n-1)) + 1
+
+Notação big-O -> O(n)
+
+
+
+Código:
+def moveDisks(n,fromTower, toTower, auxTower):
+    if n >= 1:
+        moveDisks(n-1, fromTower, auxTower, toTower)
+        print("moving disk from", fromTower,"to", toTower)
+        moveDisks(n-1, auxTower, toTower, fromTower)

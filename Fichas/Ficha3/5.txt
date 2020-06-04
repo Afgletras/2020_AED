@@ -1,0 +1,6 @@
+a) T(n) = 1 + T(n-1) + T(n-1) = 1 + 2(T(n-1))
+
+b) A ordem de magnitude de T(n) é O(n), uma vez que é o grau maior que se encontra na expressão
+
+
+
