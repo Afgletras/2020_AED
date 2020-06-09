@@ -92,25 +92,33 @@ print(d)
 print(binarySearch_iterative(d,20))
 print(binarySearch_recursive(d,20))
 
-# exer 6
-# def binarySearch_recursiveNoSlice(alist,start,end, item):
-#
-#     if len(alist) == 0:
-#         return False
-#
-#     # NÃO é necessário (mas pode-se deixar)
-#     # if len(alist) == 1:
-#     #     return alist[0] == item
-#
-#     midpoint = len(alist) // 2
-#     if item == alist[midpoint]:
-#         return True
-#     else:
-#         if item < alist[midpoint]:
-#             start=alist[0]
-#             end=alist[midpoint-1]
-#             return binarySearch_recursiveNoSlice(alist,start,end, item)
-#         else:
-#             start=alist[midpoint+1]
-#             end=alist[-1]
-#             return binarySearch_recursiveNoSlice(alist,start,end, item)
+#exer 6
+def binarySearch_recursiveNoSlice(lista,inicio,fim, item):
+    if len(lista) == 0:
+        return False
+    elif lista[0]>item:
+        return False
+    elif lista[0]==item:
+        return True
+    elif lista[fim]==item:
+        return True
+    elif lista[fim]<item:
+        return False
+    pontoMedio = (inicio+fim) // 2
+    if item == lista[pontoMedio]:
+        return True
+    else:
+        if item < lista[pontoMedio]:
+            return binarySearch_recursiveNoSlice(lista,inicio,pontoMedio-1, item)
+        else:
+            return binarySearch_recursiveNoSlice(lista,pontoMedio+1,fim, item)
+#6-a)
+noSlice=[]
+for i in range(50):
+    noSlice.append(random.randint(1,50))
+# 6-b)
+noSlice.append(10)
+
+noSlice.sort()
+print(noSlice)
+print(binarySearch_recursiveNoSlice(noSlice,0,3,1))
