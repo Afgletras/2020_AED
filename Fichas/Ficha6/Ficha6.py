@@ -38,6 +38,7 @@ def transfer(s, t):
         t.push(s.pop())
     return t
 
+
 def test_transfer():
     stack = Stack()
     stack.push(1)
@@ -62,6 +63,7 @@ def rev_string(mystr):
         stack.push(c)
     stack.reverse()
     return stack
+
 
 def test_rev_string():
     string = 'AndreLetras'
@@ -113,6 +115,7 @@ def findDuplicateParenthesis(string):
             print(stack)
 
     return False
+
 
 def test_findDuplicateParenthesis():
     string = "((x+y))+z"
