@@ -1,5 +1,6 @@
 import random
 import time
+import matplotlib.pyplot as plt
 
 def quickSort(alist):
     quickSortHelper(alist, 0, len(alist) - 1)
@@ -41,14 +42,38 @@ def partition(alist, first, last):
 
     return rightmark
 
-alist = []
-for i in range(0, 100):
-    n = random.randint(0, 200)
-    alist.append(n)
 
-start = time.perf_counter()
-quickSort(alist)
-print(alist)
-end = time.perf_counter()
+# #################################### TESTE ######################################
 
-print("Time: ", end-start)
+benchmarkList = []
+# 20 Testes
+for i in range(1, 21):
+
+    alist = []
+    for j in range(0, 200):
+        n = random.randint(0, 200)
+        alist.append(n)
+
+    print(i, "º Teste:")
+    print(alist)
+
+    start = time.perf_counter()
+    quickSort(alist)
+    print(alist)
+    end = time.perf_counter()
+
+    benchmark = end-start
+    benchmarkList.append(benchmark)
+    print("Time: ", benchmark, "\n")
+
+print("Benchmarking Times: ", benchmarkList)
+avgTime = sum(benchmarkList) / len(benchmarkList)
+print("Média dos Tempos de Benchmarking: ", avgTime)
+
+#plt.plot([1, 2, 3, 4])
+#plt.ylabel('some numbers')
+#plt.show()
+
+
+
+
