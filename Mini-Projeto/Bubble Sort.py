@@ -19,14 +19,14 @@ for i in range(1, 21):
 
     alist = []
     for j in range(0, 200):
-        n = random.randint(0, 200)
+        n = random.randint(0, 100)
         alist.append(n)
 
     print(i, "º Teste:")
     print(alist)
 
     start = time.perf_counter()
-    mergeSort(alist)
+    bubbleSort(alist)
     print(alist)
     end = time.perf_counter()
 

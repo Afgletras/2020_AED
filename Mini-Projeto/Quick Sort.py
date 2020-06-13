@@ -47,14 +47,14 @@ def partition(alist, first, last):
 
 benchmarkList = []
 # 20 Testes
-for i in range(1, 21):
+for i in range(0, 5):
 
     alist = []
     for j in range(0, 200):
-        n = random.randint(0, 200)
+        n = random.randint(0, 100)
         alist.append(n)
 
-    print(i, "º Teste:")
+    print(i+1, "º Teste:")
     print(alist)
 
     start = time.perf_counter()
@@ -70,6 +70,11 @@ print("Benchmarking Times: ", benchmarkList)
 avgTime = sum(benchmarkList) / len(benchmarkList)
 print("Média dos Tempos de Benchmarking: ", avgTime)
 
+
+# ############################### GRÁFICO ##############################
+
+time = []
+numbers = []
 #plt.plot([1, 2, 3, 4])
 #plt.ylabel('some numbers')
 #plt.show()
