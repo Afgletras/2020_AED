@@ -40,7 +40,7 @@ def mergeSort(alist):
 
 benchmarkList = []
 # 20 Testes
-for i in range(1, 21):
+for i in range(0, 5):
 
     alist = []
     for j in range(0, 200):
