@@ -57,7 +57,7 @@ benchmarkList = []
 for i in range(0, 5):
 
     alist = []
-    for j in range(0, 50):
+    for j in range(0, 3200):
         n = random.randint(0, 100)
         alist.append(n)
 

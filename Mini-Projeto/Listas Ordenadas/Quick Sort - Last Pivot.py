@@ -47,13 +47,13 @@ benchmarkList = []
 for i in range(0, 5):
 
     alist = []
-    for j in range(0, 50):
+    for j in range(0, 5000):
         n = random.randint(0, 100)
         alist.append(n)
 
     print(i + 1, "º Teste:")
     print('Lista Original:')
-    alist.sort()
+    alist.sort(reverse=True)
     print(alist)
 
     start = time.perf_counter()
