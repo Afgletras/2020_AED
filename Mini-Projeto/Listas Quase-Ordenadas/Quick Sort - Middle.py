@@ -14,9 +14,9 @@ def quickSort(x, l, r):
             left += 1
             right -= 1
     if l < right: # sort left list
-        qsort(x, l, right)
+        quickSort(x, l, right)
     if left < r: # sort right list
-        qsort(x, left, r)
+        quickSort(x, left, r)
     return x
 
 
