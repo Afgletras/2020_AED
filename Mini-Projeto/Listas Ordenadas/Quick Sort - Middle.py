@@ -2,13 +2,22 @@ import random
 import time
 
 
-def bubbleSort(alist):
-    for passnum in range(len(alist)-1, 0, -1):
-        for i in range(passnum):
-            if alist[i] > alist[i+1]:
-                temp = alist[i]
-                alist[i] = alist[i+1]
-                alist[i+1] = temp
+def quickSort(x, l, r):
+    left = l
+    right = r
+    p = x[l + (r - l) // 2] # pivot element in the middle
+    while left <= right:
+        while x[left] < p: left += 1
+        while x[right] > p: right -= 1
+        if left <= right: # swap
+            x[left], x[right] = x[right], x[left]
+            left += 1
+            right -= 1
+    if l < right: # sort left list
+        qsort(x, l, right)
+    if left < r: # sort right list
+        qsort(x, left, r)
+    return x
 
 
 # #################################### TESTE ######################################
@@ -24,10 +33,11 @@ for i in range(0, 5):
 
     print(i + 1, "º Teste:")
     print('Lista Original:')
+    alist.sort()
     print(alist)
 
     start = time.perf_counter()
-    bubbleSort(alist)
+    quickSort(alist, 0, len(alist)-1)
     end = time.perf_counter()
 
     print('Lista Ordenada:')

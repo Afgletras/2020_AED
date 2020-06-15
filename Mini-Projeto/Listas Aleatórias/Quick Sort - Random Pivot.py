@@ -43,28 +43,32 @@ def partition(alist, start, stop):
 
 
 # #################################### TESTE ######################################
-
 benchmarkList = []
+
 # 5 Testes
 for i in range(0, 5):
 
     alist = []
-    for j in range(0, 800):
+    for j in range(0, 50):
         n = random.randint(0, 100)
         alist.append(n)
 
-    print(i+1, "º Teste:")
+    print(i + 1, "º Teste:")
+    print('Lista Original:')
     print(alist)
 
     start = time.perf_counter()
-    quickSort(alist, 0, len(alist) - 1)
-    print(alist)
+    quickSort(alist, 0, len(alist)-1)
     end = time.perf_counter()
+
+    print('Lista Ordenada:')
+    print(alist)
 
     benchmark = end-start
     benchmarkList.append(benchmark)
     print("Time: ", benchmark, "\n")
 
-print("Benchmarking Times: ", benchmarkList)
+print("Tempos Benchmarking: ", benchmarkList)
 avgTime = sum(benchmarkList) / len(benchmarkList)
-print("Média dos Tempos de Benchmarking: ", avgTime)
+
+print("Média dos Tempos de Benchmarking: ", avgTime.__round__(5))

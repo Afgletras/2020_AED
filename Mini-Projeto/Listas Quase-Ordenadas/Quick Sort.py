@@ -44,6 +44,13 @@ def partition(alist, first, last):
 
 
 # #################################### TESTE ######################################
+def nearSorted(alist):
+    n = len(alist)
+    alist.sort()
+    for l in range(n//3):
+        alist[(n//2) + (l+1)], alist[n-(l+1)] = alist[n-(l+1)], alist[(n//2) + (l+1)]
+
+
 benchmarkList = []
 
 # 5 Testes
@@ -56,7 +63,10 @@ for i in range(0, 5):
 
     print(i + 1, "º Teste:")
     print('Lista Original:')
-    alist.sort()
+    print(alist)
+
+    nearSorted(alist)
+    print('Lista Quase-Ordenada:')
     print(alist)
 
     start = time.perf_counter()
