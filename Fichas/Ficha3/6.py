@@ -1,8 +1,9 @@
 def factorial(n):
-    if n is 0:
+    if n == 0:
         return 1
 
     return n * factorial(n-1)
+
 
 # Função que devolve o valor da formula de a(i,j)
 def entry_pascalTriangle(row, column):
@@ -10,6 +11,7 @@ def entry_pascalTriangle(row, column):
         return 1
     else:
         print(int(factorial(row) / (factorial(column) * factorial(row - column))))
+
 
 # Função que devolve apenas uma linha
 def print_line_pascalTriangle(i):
@@ -21,6 +23,7 @@ def print_line_pascalTriangle(i):
             line.append(int(factorial(i) / (factorial(j) * factorial(i - j))))
     print(line)
 
+
 # Função que escreve no ecrã o triangulo de Pascal
 def print_pascal_triangle(n):
     if n < 0:
@@ -31,6 +34,7 @@ def print_pascal_triangle(n):
             line.append(int(factorial(n) / (factorial(i) * factorial(n - i))))
     print_pascal_triangle(n - 1)
     print(line)
+
 
 def main():
     n = int(input("Introduza o valor de n: "))
@@ -45,5 +49,6 @@ def main():
 
     print("Valor de a(", i, ",", j, "):")
     entry_pascalTriangle(i, j)
+
 
 main()
