@@ -1,4 +1,4 @@
-from LinkedList import LinkedList
+from Fichas.Ficha8.LinkedList import LinkedList
 
 a=LinkedList()
 print(a)
