@@ -1,4 +1,4 @@
-from Stack import Stack
+from Fichas.Ficha6.Stack import Stack
 
 # Exercicio 1:
 m = Stack()
