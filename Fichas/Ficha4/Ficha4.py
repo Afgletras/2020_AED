@@ -1,5 +1,6 @@
 import random
 
+
 # exer 1
 def sequential_search(alist, value):
     for i in range(len(alist)):
@@ -9,6 +10,7 @@ def sequential_search(alist, value):
 x=[15,18,2,19,18,0,8,14,19,14]
 print(sequential_search(x,18))
 # resposta: alínea D. Foram feitas 2 comparações pois, o valor a ser pesquisado é o segundo elemento da lista.
+
 
 # exer 2
 def sequential_search_orederedList(alist, value):
@@ -46,6 +48,7 @@ c= [3,5,6,8,11,12,14,15,17,18]
 print(sequential_search_orederedList(c,16))
 # D
 
+
 # exer 5
 def binarySearch_iterative(alist, item):
 
@@ -64,6 +67,7 @@ def binarySearch_iterative(alist, item):
                 first = midpoint + 1
 
     return found
+
 
 def binarySearch_recursive(alist, item):
 
@@ -92,6 +96,7 @@ print(d)
 print(binarySearch_iterative(d,20))
 print(binarySearch_recursive(d,20))
 
+
 #exer 6
 def binarySearch_recursiveNoSlice(lista,inicio,fim, item):
     if len(lista) == 0:
@@ -112,8 +117,10 @@ def binarySearch_recursiveNoSlice(lista,inicio,fim, item):
             return binarySearch_recursiveNoSlice(lista,inicio,pontoMedio-1, item)
         else:
             return binarySearch_recursiveNoSlice(lista,pontoMedio+1,fim, item)
+
+
 #6-a)
-noSlice=[]
+noSlice = []
 for i in range(50):
     noSlice.append(random.randint(1,50))
 # 6-b)
