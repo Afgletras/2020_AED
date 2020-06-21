@@ -26,7 +26,7 @@ m.peek
 # Exercicio 3:
 # Resposta: A implementação alternativa, uma vez que possui o pop(0) e o insert(), possuem ambos complexidade O(n), e
 #           portanto a implementação alternativa tem complexidade maior do que a implementação normal, sendo assim a
-#           normal mais eficiente.
+#           normal um pouco mais eficiente.
 
 # Exercicio 4:
 # Resposta: Este método serve para apresentar os elementos da pilha de forma mais representativa e vertical.
