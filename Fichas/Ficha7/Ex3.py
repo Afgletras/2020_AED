@@ -6,10 +6,14 @@ class Queue:
         return self.items == []
 
     def enqueue(self, item):
-        self.items.insert(0, item)
+        self.items.append(item)  # O(1)
 
     def dequeue(self):
-        return self.items.pop()
+        return self.items.pop(len(self.items) - 1)  # O(n)
+
+    # Resposta: Em termos de complexidade é igual à implementação normal, uma vez que o insert tem complexidade O(n),
+    # no entanto o pop(i) tem complexidade O(n) também, logo acaba por ser igual.
+
 
     def size(self):
         return len(self.items)

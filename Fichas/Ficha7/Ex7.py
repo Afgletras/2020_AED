@@ -2,12 +2,11 @@ from Fichas.Ficha7.Queue import Queue
 from Fichas.Ficha7.Stack import Stack
 
 
-# Exercicio 7:
 def merge(a, b):
     sa = Stack()
     sb = Stack()
 
-    # Inserir os items de cada queue em stacks
+    # Inserir os items de cada queue em stacks independentes
     for i in a.items:
         sa.push(i)
 
@@ -28,7 +27,7 @@ def merge(a, b):
             tmp = sa.pop()
             sc.push(tmp)
 
-    # Inverter o stack
+    # Virar o stack ao contrario
     sd = Stack()
     while not sc.isEmpty():
         tmp = sc.pop()
@@ -42,18 +41,24 @@ def merge(a, b):
     return c
 
 
-# Teste
-a = Queue()
-b = Queue()
+def main():
+    a = Queue()
+    b = Queue()
 
-items1 = [5, 10, 30, 45, 2]
-for item_a in items1:
-    a.enqueue(item_a)
+    # items1 = input("Elementos da primeira fila (ordenados e separados por espaço) --> ")
+    items1 = [5, 10, 30]
+    for itema in items1:
+        a.enqueue(itema)
 
-items2 = [6, 11, 31, 42, 50]
-for item_b in items2:
-    b.enqueue(item_b)
+    # items2 = input("Elementos da segunda fila (ordenados e separados por espaço) --> ")
+    items2 = [7, 20, 34]
+    for itemb in items2:
+        b.enqueue(itemb)
 
-print("a:", a.items)
-print("b:", b.items)
-print("c:", merge(a, b))
+    print("a: ", a.items)
+    print("b: ", b.items)
+    print("merge =", merge(a, b))
+
+
+if __name__ == "__main__":
+    main()
