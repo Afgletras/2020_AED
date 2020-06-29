@@ -1,4 +1,4 @@
-from AED.Node import Node
+from Fichas.Ficha8.Node import Node
 
 
 class Stack:
